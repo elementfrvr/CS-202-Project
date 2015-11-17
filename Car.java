@@ -75,14 +75,6 @@ public class Car {
 			setEfficiency(effi);
 		}
 		
-		//Run car for specified period of time
-		public void simulator(int time){
-			 int fuelLoss = (time * efficiency * (currentSpeed * currentSpeed));
-			 int distanceTraveled = (time * currentSpeed);
-			 setCurrentFuel(currentFuel - fuelLoss);
-			 setDistance(distance + distanceTraveled);
-		}
-		
 		//Changes speed of car
 		public void changeSpeed(){
 			System.out.println("Enter new speed:");
