@@ -1,10 +1,9 @@
-
 import java.util.Scanner;
 
 // Dakota Mitchem
 // CS 202 Section 002
 // Assignment 4.2
-// Goal: Simulates attributes of a motorboat
+// Goal: Simulates attributes of a motor boat
 
 public class MotorBoat {
 	//Declares private variables
@@ -99,9 +98,7 @@ public class MotorBoat {
 	
 	//Adds fuel to boat
 	public void refuel (){
-		System.out.println("Enter amount of fuel to add:");
-		int fuel = scan.nextInt();
-		setCurrentFuel(currentFuel + fuel);
+		setCurrentFuel(maxFuel);
 	}
 	
 	//Checks fuel level of boat
