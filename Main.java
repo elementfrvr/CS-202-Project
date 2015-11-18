@@ -68,6 +68,7 @@ public class Main {
 			player1.changeSpeed();
 			System.out.print("Player 2, Select a speed. Your car's maximum speed is " + player2.getMaxSpeed());
 			player2.changeSpeed();
+			
 			//Calculates new distance for player 1
 			distanceTraveled=time* player1.getCurrentSpeed();
 			player1.setDistance(player1.getDistance()+distanceTraveled);
@@ -88,11 +89,13 @@ public class Main {
 		//Display current distance and fuel for player 1
 			System.out.println("Player 1 Distance traveled: " + player1.getDistance() + " miles.");
 			System.out.println("Player 1 fuel remaining: " + player1.getCurrentFuel());
+			
 			//Display current distance and fuel for player 2
 			System.out.println("Player 2 Distance traveled: " + player2.getDistance() + " miles.");
 			System.out.println("Player 2 fuel remaining: " + player2.getCurrentFuel());
-			
+
+//Placeholder for random refuels
 		}
-		
+//Placeholder for Victory message
 	}
 }
