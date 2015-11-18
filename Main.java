@@ -9,7 +9,7 @@ public class Main {
 		//Creates random generator
 		Random gen= new Random();
 		//Variables for fuel loss and distance traveled
-		int fuelLoss, distanceTraveled;
+		int fuelLoss, distanceTraveled, randomFuel;
 		//Constant variable for time
 		final int time = 10;
 		
@@ -94,7 +94,19 @@ public class Main {
 			System.out.println("Player 2 Distance traveled: " + player2.getDistance() + " miles.");
 			System.out.println("Player 2 fuel remaining: " + player2.getCurrentFuel());
 
-//Placeholder for random refuels
+			//Random refuel for player 1
+			randomFuel=gen.nextInt(100)+1;
+			if (randomFuel<=40){
+				player1.refuel();
+				System.out.println("Player 1 has gained a refuel!\n");
+			}
+			
+			//Random refuel for player 2
+			randomFuel=gen.nextInt(100)+1;
+			if (randomFuel<=40){
+				player2.refuel();
+				System.out.println("Player 2 has gained a refuel!\n");
+			}
 		}
 //Placeholder for Victory message
 	}
