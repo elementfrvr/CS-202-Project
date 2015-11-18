@@ -17,8 +17,8 @@ public class Main {
 		System.out.println("Hello! And welcome to the Crucible! This race will have you and an opponent race across 10,000 miles.");
 		System.out.println("The winner will be declared when the first player crosses the finish line! But beware, if you happen to run out of fuel,"
 				+ " you will be stranded and forfeit to your opponent!");
-		System.out.println("There are three choices: Sports Car, Economy Car, and Tanker.\n The Sports Car has a top speed of 250, holds 150 fuel, and is the least efficient."
-				+ "\n The Economy Car has a top speed of 175, holds 200 fuel, and is the most efficient. \n The Tanker has a top speed of 140, holds 300 fuel, and has an average efficiency.");
+		System.out.println("There are three choices: Sports Car, Economy Car, and Tanker.\n The Sports Car has a top speed of 250, holds 1500 fuel, and is the least efficient."
+				+ "\n The Economy Car has a top speed of 175, holds 2000 fuel, and is the most efficient. \n The Tanker has a top speed of 140, holds 3000 fuel, and has an average efficiency.");
 		System.out.println("Let's get ready to race!!");
 		
 		// Creates Player 1 car
@@ -27,17 +27,18 @@ public class Main {
 		String car1=scan.nextLine();
 		switch(car1){
 		case "Sports Car":
-			player1.initialValues(150, 250, .65);
+			player1.initialValues(1500, 250, .00035);
 			break;
 		case "Economy Car":
-			player1.initialValues(200, 175, .50);
+			player1.initialValues(2000, 175, .00020);
 			break;
 		case "Tanker":
-			player1.initialValues(300, 140, .60);
+			player1.initialValues(3000, 140, .00030);
 			break;
 		default:
 			System.out.println("Invalid car name.");
 		}
+		player1.refuel();
 //Placeholder for invalid name loop		
 		
 		// Creates Player 2 car
@@ -46,17 +47,18 @@ public class Main {
 		String car2=scan.nextLine();
 		switch(car2){
 		case "Sports Car":
-			player2.initialValues(150, 250, .65);
+			player2.initialValues(1500, 250, .00035);
 			break;
 		case "Economy Car":
-			player2.initialValues(200, 175, .50);
+			player2.initialValues(2000, 175, .00020);
 			break;
 		case "Tanker":
-			player2.initialValues(300, 140, .60);
+			player2.initialValues(3000, 140, .00030);
 			break;
 		default:
 			System.out.println("Invalid car name.");
 		}
+		player2.refuel();
 //Placeholder for invalid name loop
 		
 		// Game Loop
@@ -70,7 +72,7 @@ public class Main {
 			distanceTraveled=time* player1.getCurrentSpeed();
 			player1.setDistance(player1.getDistance()+distanceTraveled);
 			//Calculates fuel loss for player 1
-			fuelLoss=(int) (player1.getCurrentSpeed()*player1.getEfficiency()*distanceTraveled);
+			fuelLoss=(int) ((player1.getCurrentSpeed()*player1.getEfficiency())*distanceTraveled);
 			player1.setCurrentFuel(player1.getCurrentFuel()-fuelLoss);
 //Placeholder for out of fuel				
 			
@@ -79,7 +81,7 @@ public class Main {
 			player2.setDistance(player2.getDistance()+distanceTraveled);
 
 			//Calculates fuel loss for player 2
-			fuelLoss=(int) (player2.getCurrentSpeed()*player2.getEfficiency()*distanceTraveled);
+			fuelLoss=(int) ((player2.getCurrentSpeed()*player2.getEfficiency())*distanceTraveled);
 			player2.setCurrentFuel(player2.getCurrentFuel()-fuelLoss);
 //Placeholder for out of fuel
 			
