@@ -11,7 +11,7 @@ public class Main {
 		//Variables for fuel loss and distance traveled
 		int fuelLoss, distanceTraveled;
 		//Constant variable for time
-		final int time = 30;
+		final int time = 10;
 		
 		// Displays a welcome message
 		System.out.println("Hello! And welcome to the Crucible! This race will have you and an opponent race across 10,000 miles.");
@@ -81,7 +81,15 @@ public class Main {
 			//Calculates fuel loss for player 2
 			fuelLoss=(int) (player2.getCurrentSpeed()*player2.getEfficiency()*distanceTraveled);
 			player2.setCurrentFuel(player2.getCurrentFuel()-fuelLoss);
-//Placeholder for out of fuel			
+//Placeholder for out of fuel
+			
+		//Display current distance and fuel for player 1
+			System.out.println("Player 1 Distance traveled: " + player1.getDistance() + " miles.");
+			System.out.println("Player 1 fuel remaining: " + player1.getCurrentFuel());
+			//Display current distance and fuel for player 2
+			System.out.println("Player 2 Distance traveled: " + player2.getDistance() + " miles.");
+			System.out.println("Player 2 fuel remaining: " + player2.getCurrentFuel());
+			
 		}
 		
 	}
