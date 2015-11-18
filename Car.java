@@ -100,7 +100,7 @@ public class Car {
 	//checks distance traveled
 	public void distanceCheck(){
 		System.out.println("Distance traveled is " + distance);
-//Placeholder for distance graphi
+//Placeholder for distance graphic
 	}
 
 }
