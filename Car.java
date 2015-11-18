@@ -81,7 +81,7 @@ public class Car {
 		
 	//Changes speed of car
 	public void changeSpeed(){
-		System.out.println("Enter new speed:");
+		System.out.println("\nEnter new speed:");
 		int speed = scan.nextInt();
 		setCurrentSpeed(speed);
 //Placeholder for invalid speed
