@@ -84,6 +84,7 @@ public class Car {
 		System.out.println("Enter new speed:");
 		int speed = scan.nextInt();
 		setCurrentSpeed(speed);
+//Placeholder for invalid speed
 	}
 		
 	//Adds fuel to car
@@ -99,6 +100,7 @@ public class Car {
 	//checks distance traveled
 	public void distanceCheck(){
 		System.out.println("Distance traveled is " + distance);
+//Placeholder for invalid car type
 	}
 
 }
