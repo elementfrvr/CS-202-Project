@@ -27,13 +27,13 @@ public class Main {
 		String car1=scan.nextLine();
 		switch(car1){
 		case "Sports Car":
-			player1.initialValues(1500, 250, .00035);
+			player1.initialValues(1500, 250, .00055);
 			break;
 		case "Economy Car":
-			player1.initialValues(2000, 175, .00020);
+			player1.initialValues(2000, 175, .00040);
 			break;
 		case "Tanker":
-			player1.initialValues(3000, 140, .00030);
+			player1.initialValues(3000, 140, .00050);
 			break;
 		default:
 			System.out.println("Invalid car name.");
@@ -47,13 +47,13 @@ public class Main {
 		String car2=scan.nextLine();
 		switch(car2){
 		case "Sports Car":
-			player2.initialValues(1500, 250, .00035);
+			player2.initialValues(1500, 250, .00055);
 			break;
 		case "Economy Car":
-			player2.initialValues(2000, 175, .00020);
+			player2.initialValues(2000, 175, .00040);
 			break;
 		case "Tanker":
-			player2.initialValues(3000, 140, .00030);
+			player2.initialValues(3000, 140, .00050);
 			break;
 		default:
 			System.out.println("Invalid car name.");
@@ -86,23 +86,25 @@ public class Main {
 			player2.setCurrentFuel(player2.getCurrentFuel()-fuelLoss);
 			
 			//Display current distance and fuel for player 1
-			System.out.println("Player 1 Distance traveled: " + player1.getDistance() + " miles.");
+			System.out.print("Player 1 ");
+			player1.distanceCheck();
 			System.out.println("Player 1 fuel remaining: " + player1.getCurrentFuel());
 			
 			//Display current distance and fuel for player 2
-			System.out.println("Player 2 Distance traveled: " + player2.getDistance() + " miles.");
+			System.out.print("Player 2 ");
+			player2.distanceCheck();
 			System.out.println("Player 2 fuel remaining: " + player2.getCurrentFuel());
 
 			//Random refuel for player 1
 			randomFuel=gen.nextInt(100)+1;
-			if (randomFuel<=40){
+			if (randomFuel<=35){
 				player1.refuel();
 				System.out.println("Player 1 has gained a refuel!\n");
 			}
 			
 			//Random refuel for player 2
 			randomFuel=gen.nextInt(100)+1;
-			if (randomFuel<=40){
+			if (randomFuel<=35){
 				player2.refuel();
 				System.out.println("Player 2 has gained a refuel!\n");
 			}
