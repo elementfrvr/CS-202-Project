@@ -85,11 +85,13 @@ public class Car {
 		int speed = scan.nextInt();
 	//Checks for invalid speed
 		while (speed > -1){
-		if(speed > maxSpeed){
-			System.out.println("Invalid Speed! Enter a new valid speed!");
-			speed = scan.nextInt();
-		} else {
-				break;}}
+			if(speed > maxSpeed){
+				System.out.println("Invalid Speed! Enter a new valid speed!");
+				speed = scan.nextInt();
+			}
+			else 
+				break;
+		}
 		setCurrentSpeed(speed);		
 	}
 		
@@ -262,10 +264,5 @@ public class Car {
 		System.out.println("                                                                                                                                     |");
 		}
 	
-	
-	
-	
-	
 	}
-
 }
