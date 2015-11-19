@@ -25,46 +25,65 @@ public class Main {
 		Car player1 = new Car();
 		System.out.println("Now It's time for Player 1 to select a car!\n Please enter either Sports Car, Economy Car, or Tanker.");
 		String car1=scan.nextLine();
+		//Checks for invalid car type
+		while (time > 0){
+			if(car1.equals("Tanker")|| car1.equals("Sports Car")|| car1.equals("Economy Car")){
+				break;
+			}
+			else 
+				System.out.println("Invalid Car name! Try Again!");
+				car1 = scan.nextLine();
+		}
+		//Inputs initial values into car 1
 		switch(car1){
 		case "Sports Car":
-			player1.initialValues(1500, 250, .00055);
+			player1.initialValues(1500, 200, .0055);
 			break;
 		case "Economy Car":
-			player1.initialValues(2000, 175, .00040);
+			player1.initialValues(2000, 150, .0040);
 			break;
 		case "Tanker":
-			player1.initialValues(3000, 140, .00050);
+			player1.initialValues(3000, 100, .0080);
 			break;
 		default:
 			System.out.println("Invalid car name.");
 		}
 		player1.refuel();
-//Placeholder for invalid name loop		
+	
 		
 		// Creates Player 2 car
 		Car player2 = new Car();
 		System.out.println("Now It's time for Player 2 to select a car!\n Please enter either Sports Car, Economy Car, or Tanker.");
 		String car2=scan.nextLine();
+		//Checks for invalid car type
+		while (time > 0){
+			if(car2.equals("Tanker")|| car2.equals("Sports Car")|| car2.equals("Economy Car")){
+				break;
+			}
+			else 
+				System.out.println("Invalid Car name! Try Again!");
+				car2 = scan.nextLine();
+		}
+		//Inputs initial values into car 2
 		switch(car2){
 		case "Sports Car":
-			player2.initialValues(1500, 250, .00055);
+			player2.initialValues(1500, 200, .0055);
 			break;
 		case "Economy Car":
-			player2.initialValues(2000, 175, .00040);
+			player2.initialValues(2000, 150, .0040);
 			break;
 		case "Tanker":
-			player2.initialValues(3000, 140, .00050);
+			player2.initialValues(3000, 100, .0080);
 			break;
 		default:
 			System.out.println("Invalid car name.");
 		}
 		player2.refuel();
-//Placeholder for invalid name loop
 		
 // Game Loop
 		while (player1.getDistance() < 10000 & player2.getDistance() <10000 & player1.getCurrentFuel()>0 & player2.getCurrentFuel()>0){
 			// Select speed
-			System.out.print("Player 1, Select a speed. Your car's maximum speed is " + player1.getMaxSpeed());
+			System.out.print("\n\nPlayer 1, Select a speed. Your car's maximum speed is " + player1.getMaxSpeed());
 			player1.changeSpeed();
 			System.out.print("Player 2, Select a speed. Your car's maximum speed is " + player2.getMaxSpeed());
 			player2.changeSpeed();
