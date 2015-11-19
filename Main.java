@@ -61,6 +61,7 @@ public class Main {
 		player2.refuel();
 //Placeholder for invalid name loop
 		
+		
 // Game Loop
 		while (player1.getDistance() < 10000 & player2.getDistance() <10000 & player1.getCurrentFuel()>0 & player2.getCurrentFuel()>0){
 			// Select speed
@@ -94,6 +95,16 @@ public class Main {
 			System.out.print("Player 2 ");
 			player2.distanceCheck();
 			System.out.println("Player 2 fuel remaining: " + player2.getCurrentFuel());
+			
+			//Placeholder for distance graphic
+			if(player2.getDistance() > player1.getDistance()){
+				System.out.println("______________________________________________________________________________________");
+				System.out.println("          "+ "[PLAYER 1]");
+				System.out.println("\n" +"------------ ------------ ------------ ------------ ------------ ------------ --------");
+				System.out.println(  "                                              "+ "[PLAYER 2]");
+				System.out.println("______________________________________________________________________________________");
+				System.out.println("Player 2 is in the lead!");
+			}
 
 			//Random refuel for player 1
 			randomFuel=gen.nextInt(100)+1;
