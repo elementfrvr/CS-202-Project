@@ -83,8 +83,14 @@ public class Car {
 	public void changeSpeed(){
 		System.out.println("\nEnter new speed:");
 		int speed = scan.nextInt();
-		setCurrentSpeed(speed);
-//Placeholder for invalid speed
+	//Checks for invalid speed
+		while (speed > -1){
+		if(speed > maxSpeed){
+			System.out.println("Invalid Speed! Enter a new valid speed!");
+			speed = scan.nextInt();
+		} else {
+				break;}}
+		setCurrentSpeed(speed);		
 	}
 		
 	//Adds fuel to car
@@ -100,7 +106,7 @@ public class Car {
 	//checks distance traveled
 	public void distanceCheck(){
 		System.out.println("Distance traveled is " + distance);
-//Placeholder for distance graphic
+//Distance Graphic. Every time distance increases by 500, the player moves up a space
 	if(distance == 0){
 		System.out.println("_____________________________________________________________________________________________________________________________________|");
 		System.out.println("X                                                                                                                                    |");                                                                 
@@ -248,7 +254,7 @@ public class Car {
 		System.out.println("_____________________________________________________________________________________________________________________________________|");
 		System.out.println("                                                                                                                                     |");
 		}
-	if(distance == 10000){
+	if(distance >= 10000){
 		System.out.println("_____________________________________________________________________________________________________________________________________|");
 		System.out.println("                                                                                                                                     | X (WINNER!!!)");                                                                 
 		System.out.println("------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ ------ |");
