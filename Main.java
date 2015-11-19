@@ -25,6 +25,16 @@ public class Main {
 		Car player1 = new Car();
 		System.out.println("Now It's time for Player 1 to select a car!\n Please enter either Sports Car, Economy Car, or Tanker.");
 		String car1=scan.nextLine();
+		//Checks for invalid car type
+		while (time > 0){
+			if(car1.equals("Tanker")|| car1.equals("Sports Car")|| car1.equals("Economy Car")){
+				break;
+			}
+			else 
+				System.out.println("Invalid Car name! Try Again!");
+				car1 = scan.nextLine();
+		}
+		//Inputs initial values into car 1
 		switch(car1){
 		case "Sports Car":
 			player1.initialValues(1500, 200, .0055);
@@ -39,12 +49,22 @@ public class Main {
 			System.out.println("Invalid car name.");
 		}
 		player1.refuel();
-//Placeholder for invalid name loop		
+	
 		
 		// Creates Player 2 car
 		Car player2 = new Car();
 		System.out.println("Now It's time for Player 2 to select a car!\n Please enter either Sports Car, Economy Car, or Tanker.");
 		String car2=scan.nextLine();
+		//Checks for invalid car type
+		while (time > 0){
+			if(car2.equals("Tanker")|| car2.equals("Sports Car")|| car2.equals("Economy Car")){
+				break;
+			}
+			else 
+				System.out.println("Invalid Car name! Try Again!");
+				car2 = scan.nextLine();
+		}
+		//Inputs initial values into car 2
 		switch(car2){
 		case "Sports Car":
 			player2.initialValues(1500, 200, .0055);
@@ -59,7 +79,6 @@ public class Main {
 			System.out.println("Invalid car name.");
 		}
 		player2.refuel();
-//Placeholder for invalid name loop
 		
 // Game Loop
 		while (player1.getDistance() < 10000 & player2.getDistance() <10000 & player1.getCurrentFuel()>0 & player2.getCurrentFuel()>0){
