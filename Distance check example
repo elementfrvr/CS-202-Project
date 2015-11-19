@@ -1,0 +1,15 @@
+In the distanceCheck method
+Different distnces obviously, The race is ran to 10,000 So maybe move the X 1 space for every 500 miles and make 20 spaces.
+Put these if statements after the part where it prints the distance, so at the end of the method
+
+
+
+if (distance <500)
+System.out.print("X-----------------|")
+
+if (distance <1000)
+System.out.print("-X----------------|")
+
+
+if (distance <1500)
+System.out.print("--X---------------|")
