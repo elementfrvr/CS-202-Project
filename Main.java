@@ -27,13 +27,13 @@ public class Main {
 		String car1=scan.nextLine();
 		switch(car1){
 		case "Sports Car":
-			player1.initialValues(1500, 250, .00055);
+			player1.initialValues(1500, 200, .0055);
 			break;
 		case "Economy Car":
-			player1.initialValues(2000, 175, .00040);
+			player1.initialValues(2000, 150, .0040);
 			break;
 		case "Tanker":
-			player1.initialValues(3000, 140, .00050);
+			player1.initialValues(3000, 100, .0080);
 			break;
 		default:
 			System.out.println("Invalid car name.");
@@ -47,13 +47,13 @@ public class Main {
 		String car2=scan.nextLine();
 		switch(car2){
 		case "Sports Car":
-			player2.initialValues(1500, 250, .00055);
+			player2.initialValues(1500, 200, .0055);
 			break;
 		case "Economy Car":
-			player2.initialValues(2000, 175, .00040);
+			player2.initialValues(2000, 150, .0040);
 			break;
 		case "Tanker":
-			player2.initialValues(3000, 140, .00050);
+			player2.initialValues(3000, 100, .0080);
 			break;
 		default:
 			System.out.println("Invalid car name.");
@@ -64,7 +64,7 @@ public class Main {
 // Game Loop
 		while (player1.getDistance() < 10000 & player2.getDistance() <10000 & player1.getCurrentFuel()>0 & player2.getCurrentFuel()>0){
 			// Select speed
-			System.out.print("Player 1, Select a speed. Your car's maximum speed is " + player1.getMaxSpeed());
+			System.out.print("\n\nPlayer 1, Select a speed. Your car's maximum speed is " + player1.getMaxSpeed());
 			player1.changeSpeed();
 			System.out.print("Player 2, Select a speed. Your car's maximum speed is " + player2.getMaxSpeed());
 			player2.changeSpeed();
