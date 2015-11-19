@@ -61,8 +61,8 @@ public class Main {
 		player2.refuel();
 //Placeholder for invalid name loop
 		
-		// Game Loop
-		while (player1.getDistance() < 10000 & player2.getDistance() <10000){
+// Game Loop
+		while (player1.getDistance() < 10000 & player2.getDistance() <10000 & player1.getCurrentFuel()>0 & player2.getCurrentFuel()>0){
 			// Select speed
 			System.out.print("Player 1, Select a speed. Your car's maximum speed is " + player1.getMaxSpeed());
 			player1.changeSpeed();
@@ -72,21 +72,20 @@ public class Main {
 			//Calculates new distance for player 1
 			distanceTraveled=time* player1.getCurrentSpeed();
 			player1.setDistance(player1.getDistance()+distanceTraveled);
+			
 			//Calculates fuel loss for player 1
 			fuelLoss=(int) ((player1.getCurrentSpeed()*player1.getEfficiency())*distanceTraveled);
-			player1.setCurrentFuel(player1.getCurrentFuel()-fuelLoss);
-//Placeholder for out of fuel				
+			player1.setCurrentFuel(player1.getCurrentFuel()-fuelLoss);			
 			
 			//Calculates new distance for player 2
 			distanceTraveled=time* player2.getCurrentSpeed();
 			player2.setDistance(player2.getDistance()+distanceTraveled);
-
+			
 			//Calculates fuel loss for player 2
 			fuelLoss=(int) ((player2.getCurrentSpeed()*player2.getEfficiency())*distanceTraveled);
 			player2.setCurrentFuel(player2.getCurrentFuel()-fuelLoss);
-//Placeholder for out of fuel
 			
-		//Display current distance and fuel for player 1
+			//Display current distance and fuel for player 1
 			System.out.println("Player 1 Distance traveled: " + player1.getDistance() + " miles.");
 			System.out.println("Player 1 fuel remaining: " + player1.getCurrentFuel());
 			
@@ -107,7 +106,21 @@ public class Main {
 				player2.refuel();
 				System.out.println("Player 2 has gained a refuel!\n");
 			}
+			
 		}
-//Placeholder for Victory message
+//End game scenarios
+		//Player 1 out of fuel
+		if (player1.getCurrentFuel()<=0)
+			System.out.println("Player 1 is out of fuel! Player 2 wins!");
+		//Player 2 out of fuel
+		if (player2.getCurrentFuel()<=0)
+			System.out.println("Player 2 is out of fuel! Player 1 wins!");
+		
+		//Player 1 victory message
+		if (player1.getDistance()>=10000)
+			System.out.println("Player 1 has crossed the finish line! Player 1 wins!");
+		//Player 2 victory message
+		if (player2.getDistance()>=10000)
+			System.out.println("Player 2 has crossed the finish line! Player 2 wins!");	
 	}
 }
